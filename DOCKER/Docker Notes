@@ -1,0 +1,77 @@
+docker pull ubuntu  -- download ubuntu from docker
+docker images -- Lists all the docker images
+docker run ubuntu   - This will create a container for ubuntu
+docker ps -- shows only running containers
+docker ps -a -- lists all the containers
+
+docker run --privileged --name myubuntu -p 9080:22 -it ubuntu bash
+
+docker rm $(docker ps -a -q)  - To remove all the containers 
+
+docker container start  -- Starts a container
+
+docker system prune  -  single command that will clean up any resources — images, containers, volumes, and networks — that are dangling (not associated with a container)
+
+
+docker run --rm ubuntu --name myubuntu -it ubuntu bash    - to automatically delete it when it exits.
+
+docker inspect "container name"   - Get container details
+
+docker exec -it f54d798f019e bash   -- SSH onto a container
+docker exec -it <container name> <command>   -- to execute whatever command you specify in the container.
+
+docker stop $(docker ps -a -q)
+
+docker stop $(sudo docker ps -aq)
+
+
+docker system prune -a   -- Delete all 
+
+docker cp FILE 2db0d9f9e27e:/FILE  -- Copy a file from host to docket 
+
+
+docker commit 310cd1217727  ubuntu10252109
+
+172.17.0.2
+
+---------ADD a user in ubuntu-------------------
+
+docker exec -it "container id" bash  -- to ssh onto a docker
+
+-- https://www.liquidweb.com/kb/how-to-add-a-user-and-grant-root-privileges-on-ubuntu-16-04/
+adduser sai  -- Create a user
+usermod -aG sudo sai  -- Grant Root Privileges
+
+
+------------172.17.0.2
+
+docker run -d --name myubuntu --publish-all  -it ubuntu bash
+docker run --privileged -it -v /var/run/docker.sock:/var/run/docker.sock myubuntu 117a9f038939
+
+
+docker run -d --name myubuntu --publish-all  -it ubuntu
+
+docker run --privileged -p 172.19.199.7:9080:22  --name myubuntu -it  confluentinc/cp-kafka bash
+
+docker exec -it f54d798f019e bash
+
+docker run --privileged -p 22:22  --name myubuntu -it ubuntu bash
+
+#$Outbound#.dbo.Tbl_WorkdayExtract
+
+
+-e ZOOKEEPER_CLIENT_PORT=32181 -e ZOOKEEPER_TICK_TIME=2000 -e ZOOKEEPER_SYNC_LIMIT=2
+
+docker run --publish-all --name=myubuntu -it ubuntu /bin/bash
+
+docker run --publish-all --name=myjava -it openjdk /bin/bash
+
+
+
+--publish 9090:9090
+
+
+-----------------DOCKER COMPOSS--------
+
+docker-compose up -d --build
+docker-compose ps
