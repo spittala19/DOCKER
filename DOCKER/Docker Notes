@@ -71,6 +71,15 @@ docker run --publish-all --name=myjava -it openjdk /bin/bash
 --publish 9090:9090
 
 
+
+-------------GEN AI ---------
+
+docker run -d -v /Users/sai/Documents/Docker/Ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+
+docker run -d -p 3000:8080 -v /Users/sai/Documents/Docker/open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+
+
+
 -----------------DOCKER COMPOSS--------
 
 docker-compose up -d --build
