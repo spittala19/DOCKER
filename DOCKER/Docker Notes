@@ -72,7 +72,7 @@ docker run --publish-all --name=myjava -it openjdk /bin/bash
 
 docker network create --internal my_isolated_network
 
-docker run --name reporter --network mac_isolated_net -p 8080:80 mayswind/ezbookkeeping
+docker run --name reporter --network mac_isolated_net -p 8080:8080 mayswind/ezbookkeeping
 
 
 docker exec cf4e1b3930ba ping -c 3 8.8.8.8
