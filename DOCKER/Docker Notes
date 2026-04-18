@@ -70,7 +70,7 @@ docker run --publish-all --name=myjava -it openjdk /bin/bash
 
 --publish 9090:9090
 
-
+docker network create --internal my_isolated_network
 
 -------------GEN AI ---------
 
