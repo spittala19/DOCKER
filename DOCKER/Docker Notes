@@ -72,6 +72,25 @@ docker run --publish-all --name=myjava -it openjdk /bin/bash
 
 docker network create --internal my_isolated_network
 
+docker run --name reporter --network mac_isolated_net -p 8080:80 mayswind/ezbookkeeping
+
+
+docker exec cf4e1b3930ba ping -c 3 8.8.8.8
+
+docker network create \
+  -o "com.docker.network.bridge.enable_ip_masquerade=false" \
+  isolated_bridge
+
+# Create a network where the containers can't reach the gateway
+docker network create \
+  --driver=bridge \
+  --opt "com.docker.network.bridge.enable_icc=true" \
+  --opt "com.docker.network.bridge.enable_ip_masquerade=false" \
+  no_internet_bridge
+
+
+docker network rm my-network
+
 -------------GEN AI ---------
 
 docker run -d -v /Users/sai/Documents/Docker/Ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
